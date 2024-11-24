@@ -140,7 +140,7 @@ SELECT * FROM Member WHERE Member_Location IN ('New York', 'Los Angeles');
 -- 5. Retrieve all vehicles where the make is either 'Toyota' or 'Honda'.
 SELECT * FROM Vehicle WHERE Vehicle_Make IN ('Toyota', 'Honda');
 
--- 6. Find members whose age is between 25 and 40 years.  -- CHECK THIS
+-- 6. Find members whose age is between 25 and 40 years.  --
 SELECT * FROM Member WHERE Member_Age BETWEEN 25 AND 40;
 
 -- 7. List vehicles whose registration number starts with the letter 'A'.
