@@ -103,17 +103,6 @@ INSERT INTO Engineer VALUES
 (3, 'Sophia', 'Clark'),
 (4, 'Noah', 'Walker');
 
--- Create Breakdown Table
-CREATE TABLE Breakdown (
-    Breakdown_ID INT PRIMARY KEY,
-    Vehicle_Registration VARCHAR(10),
-    Engineer_ID INT,
-    Breakdown_Date DATE,
-    Breakdown_Time TIME,
-    Breakdown_Location VARCHAR(20),
-    FOREIGN KEY (Vehicle_Registration) REFERENCES Vehicle(Vehicle_Registration),
-    FOREIGN KEY (Engineer_ID) REFERENCES Engineer(Engineer_ID)
-);
 
 -- Insert Data into Breakdown Table
 INSERT INTO Breakdown VALUES
@@ -134,7 +123,7 @@ INSERT INTO Breakdown VALUES
 (15, 'YZA8888', 3, '2024-11-05', '19:30:00', 'Atlanta'),
 (16, 'CDE2020', 4, '2024-11-28', '16:30:00', 'Phoenix');
 
--- .................. TASK ...............................
+-- .................. TASK 1...............................
 
 -- 1. Retrieve the first 5 members from the Member table.
 SELECT * FROM Member LIMIT 5;
@@ -151,7 +140,7 @@ SELECT * FROM Member WHERE Member_Location IN ('New York', 'Los Angeles');
 -- 5. Retrieve all vehicles where the make is either 'Toyota' or 'Honda'.
 SELECT * FROM Vehicle WHERE Vehicle_Make IN ('Toyota', 'Honda');
 
--- 6. Find members whose age is between 25 and 40 years.
+-- 6. Find members whose age is between 25 and 40 years.  -- CHECK THIS
 SELECT * FROM Member WHERE Member_Age BETWEEN 25 AND 40;
 
 -- 7. List vehicles whose registration number starts with the letter 'A'.
@@ -285,9 +274,9 @@ ORDER BY Breakdown_Count DESC LIMIT 3;
 -- These functions are used to perform calculations on a set of values within a database table.
 
 -- AVG --
-- Calculates the average value of a numeric column.
-- Syntax: AVG(column_name)
-- Example:
+-- Calculates the average value of a numeric column. --
+-- Syntax: AVG(column_name) --
+-- Example: --
   
   SELECT AVG(MEMBER_AGE) AS average_age
   FROM MEMBER;
@@ -295,28 +284,28 @@ ORDER BY Breakdown_Count DESC LIMIT 3;
   -- This will return the average AGE of all Members.
 
 -- MAX --
-- Returns the maximum value of a column.
-- Syntax: MAX(column_name)
-- Example:
+-- Returns the maximum value of a column. --
+-- Syntax: MAX(column_name) --
+-- Example: --
   
-  SELECT MAX(sales) AS highest_sale FROM orders;
+  SELECT MAX(sales) AS highest_sale FROM orders; 
   
-  This will return the highest sales amount from the orders table.
+--  This will return the highest sales amount from the orders table. --
 
 -- MIN --
-- Returns the minimum value of a column.
-- Syntax: MIN(column_name)
-- Example:
+-- Returns the minimum value of a column. --
+-- Syntax: MIN(column_name) --
+-- Example: --
   
   SELECT MIN(age) AS youngest_employee
   FROM employees;
 
-  This will return the age of the youngest employee.
+--  This will return the age of the youngest employee. --
 
 -- SUM --
-- Calculates the sum of all values in a numeric column.
-- Syntax: SUM(column_name)
-- Example:
+-- Calculates the sum of all values in a numeric column. --
+-- Syntax: SUM(column_name) --
+-- Example: --
   
   SELECT SUM(price) AS total_price
   FROM products;
